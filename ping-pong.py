@@ -27,12 +27,21 @@ FPS = 60
 blue = [176, 196, 222]
 window.fill(blue)
 Clock = time.Clock()
-finish = False
+platform1= Player('platform.png', 30, 200, 4, 50, 150)
+platform2= Player('platform.png', 520, 200, 4, 50, 150)
+ball = GameSprite('ball.png', 200, 200, 4, 50, 50)
+speed_x = 3
+speed_y = 3
 game = True
 while game:
     for e in event.get():
         if e.type == QUIT:
             game = False
-    if finish != True:    
-        display.update()
-        Clock.tick(FPS)
+    if finish != True:
+        window.fill(blue)
+        platform1.reset()
+        platform2.reset()
+    display.update()
+    Clock.tick(FPS)
+ 
+        
